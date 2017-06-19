@@ -233,6 +233,7 @@ header>div {
     padding: 0;
     font-size: 12px;
     width: 36px;
+    margin-left: 13px;
 }
 .time.start {
     margin-right: -4px;
@@ -244,6 +245,25 @@ header>div {
     width: 180px;
     cursor: pointer;
     border-bottom: 2px solid #ccc;
+}
+.cycle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    text-align: center;
+    top: -6px;
+    left: -5px;
+}
+.cycle::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #91bdb4;
+    border-radius: 50%;
+    margin-top: 5px;
 }
 .music-color {
     position: absolute;

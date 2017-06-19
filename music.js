@@ -57,6 +57,8 @@ Music.prototype.init = function () {
     this.volumeSlider = this.getDom('.volume>input')
     //获取歌词
     this.lyric = this.getDom('.lyric')
+    //小圆圈
+    this.cycle = this.getDom('.cycle')
 }
 Music.prototype.getDom = function (selector) {
     return document.querySelector(selector)
@@ -217,6 +219,7 @@ Music.prototype.createTimer = function () {
         // this.time1.innerText = this.currentTimeF + ':' + this.currentTimeS
         this.progress += 180 / this.durationFix
         this.colorProgress.style.width = this.progress + 'px'
+        this.cycle.style.left = this.progress-5  + 'px'
     }, 1000)
 }
 //绑定事件
@@ -351,6 +354,7 @@ Music.prototype.bindEvents = function () {
         let x = e.pageX;
         let y = offset(this.grayProgress).left;
         this.colorProgress.style.width = x - y + 200 + 'px'
+        this.cycle.style.left = x - y + 200-5  + 'px'
         this.baifenbi = (x - y + 200) / 180
         this.audio.currentTime = this.baifenbi * this.durationFix
         this.isProgress = true
